@@ -1,0 +1,21 @@
+.body{
+    color: rgb(255, 255, 255);
+    margin: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #541192, #0622c0, #000000);
+    background-size: 300% 300%;
+    animation: gradientAnimation 3s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%;}
+}
+
+
+.title{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
