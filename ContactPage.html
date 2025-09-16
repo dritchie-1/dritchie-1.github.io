@@ -3,6 +3,11 @@
     <head>
         <title>Contact Form</title>
         <link rel="stylesheet" href="styleSheet.css"></link>
+        <div class="navbar">
+            <ul>
+                <li><a href="Portfolio02.html">Home</a></li>
+            </ul>
+        </div>
         <style>
             body {
                 margin: 0;
@@ -15,16 +20,52 @@
             }
         </style>
     </head>
+    <script>
+        function validateForm()
+        {
+            var fname = document.forms["Form1"]["fname"].value;
+            var lname = document.forms["Form1"]["lname"].value;
 
-    <div class="navbar">
-        <ul>
-            <li><a href="Portfolio02.html">Home</a></li>
-        </ul>
-    </div>
+            if (lname == null || lname == "") {
+                alert("Last name must not be blank");
+                return false
+            }
+
+            if (fname == null || fname == "") {
+                alert("First name must not be blank");
+                return false
+            }
+
+            var email = document.forms["Form1"]["email"].value;
+            var foundat = 0;
+            var foundot = 0;
+            for(i=0;i<email.length;i++)
+            {
+                if(email[i]=="@")
+                {
+                    foundat = i;
+                    alert("Found @ " + i);
+                };
+                if(email[i]==".")
+                {
+                    foundot = i;
+                    alert("Found . " + i);
+                };
+
+            }
+            if(foundat<1 || foundot < foundat)
+            {
+                alert("Please enter a valid email");
+                return false;
+            }
+        }
+    </script>
+
+    
     <div>
         <body>    
             <div class="form-wrapper">
-                <form action="">
+                <form name="Form1" action="" onsubmit="return validateForm()">
                     <label for="fname">First Name</label>
                     <input type="text" id="fname" name="firstname" placeholder="Your name">
 

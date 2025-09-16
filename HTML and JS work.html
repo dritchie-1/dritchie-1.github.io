@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DICE</title>
+        <link rel="styleSheet" href="dice.css">
+    </head>
+    <body>
+        <h1>Rolling Dice</h1>
+
+         1st Dice Roll: <input type="text" id="dice1" value="1">
+        <button onclick="rollDice()">Roll the first dice</button>
+        <br><br>
+
+        2nd Dice Roll: <input type="text" id="dice2" value="1">
+        <button onclick="rollDice2()">Roll the second dice</button>
+        <br>
+        
+        <img src="Images/1dice.png">
+
+        
+
+        <script>
+            function rollDice() 
+            {
+                var dice1 = Math.floor((Math.random() * 6) + 1);
+                document.getElementById("dice1").value = dice1;
+            }
+            
+            function rollDice2()
+            {
+                var dice2 = Math.floor((Math.random() * 6) + 1);
+                document.getElementById("dice2").value = dice2
+            }
+
+        </script>
+        
+    </body>
+
+</html>

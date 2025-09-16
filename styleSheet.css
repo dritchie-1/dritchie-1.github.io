@@ -28,6 +28,7 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #333333;
+    border-radius: 10px;
 }
 
 .navbar ul li {
@@ -44,6 +45,20 @@ body {
 
 .navbar ul li a:hover {
     background-color: #111111;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: semi-transparent navbar */
+    padding: 15px 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 1000;
+    
 }
 
 .about {
@@ -72,7 +87,7 @@ body {
     clear: both;
 }
 
-/* */
+/*Nevermind*/
 
 .a:link {
     color: rgb(255, 255, 255);
@@ -95,7 +110,7 @@ h1 {
     color: white;
 }
 
-/*  */
+/* Contact Form */
 
 input[type=text], select {
     width: 100%;
