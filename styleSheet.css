@@ -160,12 +160,14 @@ input[type=textarea] {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    margin-bottom: 80%;
+    margin-top: 50%;
 }
 
 .shinybox {
     position: absolute;
-    margin-top: 85px;
-    margin-left: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
     border-bottom: 5px;
     padding: 20px;
     border-right: 5px solid transparent;
