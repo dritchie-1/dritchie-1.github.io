@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Projects</title>
+        <link rel="styleSheet" href="styleSheet.css">
+        <div class="navbar">
+            <ul>
+                <li><a href="Portfolio02.html">Home</a></li>
+                <li><a href="ContactPage.html">Contact me</a></li>
+            </ul>
+        </div>
+    </head>
+    <script>
+        function calcDate()
+        {
+            var date1 = new Date(document.forms["Form1"]["date1"].value);
+            var date2 = new Date(document.forms["Form1"]["date2"].value);
+
+            const diffTime = Math.abs(date2-date1);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            const diffMonths = Math.ceil(diffDays / 30);
+            const diffYears = Math.ceil(diffMonths / 12);
+
+
+            document.getElementById("answer").value = "Result: " + diffYears.toString() + " Year, or " + diffMonths.toString() + " Months, or "  + diffDays.toString() + " Days" ;
+            return false;
+        }
+
+        function rollDice() 
+            {
+                var dice1 = Math.floor((Math.random() * 6) + 1);
+                document.getElementById("dice1").value = dice1;
+            }
+            
+            function rollDice2()
+            {
+                var dice2 = Math.floor((Math.random() * 6) + 1);
+                document.getElementById("dice2").value = dice2
+            }
+    </script>
+    <body>
+        <div class="shinybox">
+            <h1>Date Planner 📅</h1>
+            <p>Calculate days between dates</p>
+
+            <div>
+                <form name="Form1" action="" method="post" onsubmit="return calcDate()">
+
+                    <label for="date1">Choose a date</label>
+                    <input type="date" id="date1" name="date1" required>
+                    <br>
+                    <label for="date2">Choose another date</label>
+                    <input type="date" id="date2" name="date2" required>
+                    <br>
+
+                    <button type="submit">Submit</button>
+
+                    <br>
+                    <label for="answer">Result:</label>
+                    <input style="width: 130%;"type="text" id="answer" name="answer" placeholder="Your result: ">
+
+
+                </form>
+            </div>
+        </div>
+        <div class="shinybox" style="margin-top: 400px; width: 250px;">
+            <h1>Rolling Dice 🎲</h1>
+
+            1st Dice Roll: <input type="text" id="dice1" value="1">
+            <button onclick="rollDice()">Roll the first dice</button>
+            <br><br>
+
+            2nd Dice Roll: <input type="text" id="dice2" value="1">
+            <button onclick="rollDice2()">Roll the second dice</button>
+            <br>
+        </div>
+        
+    </body>
+
+
+</html>

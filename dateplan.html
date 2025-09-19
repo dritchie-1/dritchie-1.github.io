@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date planner</title>
+        <link rel="styleSheet" href="styleSheet.css">
+    </head>
+    <script>
+        function calcDate()
+        {
+            var date1 = new Date(document.forms["Form1"]["date1"].value);
+            var date2 = new Date(document.forms["Form1"]["date2"].value);
+
+            const diffTime = Math.abs(date2-date1);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            const diffMonths = Math.ceil(diffDays / 30);
+            const diffYears = Math.ceil(diffMonths / 12);
+
+
+            document.getElementById("answer").value = "Result: " + diffYears.toString() + " Year, or " + diffMonths.toString() + " Months, or "  + diffDays.toString() + " Days" ;
+            return false;
+        }
+    </script>
+
+    <body>
+        <div class="dateplan">
+            <h1>Date Planner</h1>
+            <p>Calculate days between dates</p>
+
+            <div>
+                <form name="Form1" action="" method="post" onsubmit="return calcDate()">
+
+                    <label for="date1">Choose a date</label>
+                    <input type="date" id="date1" name="date1" required>
+                    <br>
+                    <label for="date2">Choose another date</label>
+                    <input type="date" id="date2" name="date2" required>
+                    <br>
+
+                    <button type="submit">Submit</button>
+
+                    <br>
+                    <label for="answer">Result:</label>
+                    <input style="width: 130%;"type="text" id="answer" name="answer" placeholder="Your result: ">
+
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

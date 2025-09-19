@@ -8,13 +8,9 @@ body {
     align-items: center;
     background: linear-gradient(45deg, #081ddb, #000000, #480ada);
     background-size: 300% 300%;
-    animation: gradientAnimation 2s infinite alternate;
 }
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%;}
-}
+
 
 
 .title {
@@ -27,7 +23,6 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;
     border-radius: 10px;
 }
 
@@ -58,6 +53,7 @@ body {
     display: flex;
     justify-content: flex-start;
     z-index: 1000;
+    font-size: large;
     
 }
 
@@ -69,7 +65,18 @@ body {
     box-sizing: border-box;
     width:10%;
     text-align: center;
+    margin-left: 800px;
+    
+}
 
+.center-column {
+    width: 15%;
+    padding: 4px;
+    border-radius: 67px;
+    margin-left: 10px;
+    padding-left: 30px;
+    float: right;
+    margin-right: 43%;
 }
 
 .column {
@@ -79,6 +86,7 @@ body {
     border-radius: 67px;
     margin-left: 10px;
     padding-left: 30px;
+    margin-top: 10%;
 }
 
 .row::after {
@@ -152,4 +160,44 @@ input[type=textarea] {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.shinybox {
+    position: absolute;
+    margin-top: 85px;
+    margin-left: 5px;
+    border-bottom: 5px;
+    padding: 20px;
+    border-right: 5px solid transparent;
+    padding-right: 100px;
+    background: linear-gradient(0deg, #000, #272727);
+}
+
+.shinybox::before, .shinybox::after {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, black, white, grey);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: forwards 20s linear infinite;
+}
+
+@keyframes forwards {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.shinybox::after {
+    filter: blur(50px);
 }
